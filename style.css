@@ -1,6 +1,7 @@
+/**** INITIAL STYLING ****/
 *{
     box-sizing: border-box;
-    transition: all .15s;
+    transition: background-color .25s, color 0s;
     font-family: sans-serif;
 }
 
@@ -8,6 +9,58 @@ body{
     margin: 0;
 }
 
+
+
+
+/**** TYPOGRAPHY ****/
+
+h1{
+    font-size: calc(50px + 3vw);
+    width: 100%;
+    text-align: center;
+}
+
+h3{
+    margin: 0 auto;
+    font-weight: 500;
+    max-width: min(800px, 80vw);
+    font-size: 20px;
+}
+
+h4{
+    margin: 0;
+    flex-grow: 1;
+    letter-spacing: 1px;
+}
+
+
+
+
+/**** SECTIONS ****/
+
+header{
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(200,200,200, .2);
+    display: flex;
+    align-items: center;
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 0;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+
+
+
+/**** TOGGLE STYLES ****/
+
+/* hide the checkbox */
 input{
     display: none;
 }
@@ -17,11 +70,8 @@ label{
     user-select: none;
 }
 
-input:checked ~ header label{
-    /* color:red; */
-}
 
-
+/* hide/show the icons */
 .sun,
 input:checked ~ header .moon{
     display: none !important;
@@ -32,45 +82,25 @@ input ~ header .moon{
     display: block !important;
 }
 
+
+/* change styling for main and header based on checked state */
 input:checked ~ header{
     color: white;
 }
 
-
-.sun{
-    color: white;
-}
-
-
-
 input:checked ~ main{
-    background-color: black;
+    background-color: #111;
+    color:white;
 }
 
 
-
-
-
-
-header{
-    position: fixed;
-    width: 100%;
-    padding: 20px;
-    background-color: rgba(200,200,200, .3);
-    display: flex;
-    align-items: center;
+/* hide and show elements in main based on their class */
+input ~ main .dark,
+input:checked ~ main .light{
+    display: none;
 }
 
-main{
-    width: 100%;
-    min-height: 100vh;
-    padding: 200px;
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-header > h4{
-    margin: 0;
-    flex-grow: 1;
-    letter-spacing: 2px;
+input ~ main .light,
+input:checked ~ main .dark{
+    display: initial;
 }
