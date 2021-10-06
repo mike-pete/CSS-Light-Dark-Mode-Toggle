@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+    transition: all .15s;
+    font-family: sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+input{
+    display: none;
+}
+
+label{
+    cursor: pointer;
+    user-select: none;
+}
+
+input:checked ~ header label{
+    /* color:red; */
+}
+
+
+.sun,
+input:checked ~ header .moon{
+    display: none !important;
+}
+
+input:checked ~ header .sun,
+input ~ header .moon{
+    display: block !important;
+}
+
+input:checked ~ header{
+    color: white;
+}
+
+
+.sun{
+    color: white;
+}
+
+
+
+input:checked ~ main{
+    background-color: black;
+}
+
+
+
+
+
+
+header{
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(200,200,200, .3);
+    display: flex;
+    align-items: center;
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    padding: 200px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+header > h4{
+    margin: 0;
+    flex-grow: 1;
+    letter-spacing: 2px;
+}
