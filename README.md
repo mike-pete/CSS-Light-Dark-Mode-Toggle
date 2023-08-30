@@ -6,4 +6,4 @@ Users can toggle between the two states by clicking on a label element that is l
 
 This trick allows developers to achieve complex and dynamic functionality without involving JS. So users that have JS disabled will still be able to enjoy the same experience.
 
-[View Example](https://kid-on-github.github.io/CSS-Light-Dark-Mode-Toggle/)
+[View Example](https://mike-pete.github.io/CSS-Light-Dark-Mode-Toggle/)
